@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "0a6082725e8552103dd1",
+  "position": {
+    "x": 30.904154962154951,
+    "y": 95.184797283437248,
+    "z": 7000,
+    "height": 364.66902855342846,
+    "width": 496.93881179145166,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "ImageGrid_FC5183B9_926C_45E0_B5F7_0CE9EAF1DA9B",
+    "query": {
+      "queryState": {
+        "ImageURLHQ": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Movimentações"
+                    }
+                  },
+                  "Property": "Imagem"
+                }
+              },
+              "queryRef": "Movimentações.Imagem",
+              "nativeQueryRef": "Imagem"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "settings": [
+        {
+          "properties": {
+            "pRenderType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'CIRCLE'"
+                }
+              }
+            },
+            "pMaxColumns": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "pTopListWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

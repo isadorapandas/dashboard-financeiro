@@ -1,0 +1,179 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "561df23b59d5ab031106",
+  "position": {
+    "x": 16.070160580320575,
+    "y": 11.125495786375783,
+    "z": 8001,
+    "height": 35.847954439760805,
+    "width": 1249.7516650075615,
+    "tabOrder": 8001
+  },
+  "visual": {
+    "visualType": "ScrollingTextVisual1448795304508",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Movimentações"
+                    }
+                  },
+                  "Property": "Município"
+                }
+              },
+              "queryRef": "Movimentações.Município",
+              "nativeQueryRef": "Município"
+            }
+          ]
+        },
+        "Measure Absolute": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Movimentações"
+                    }
+                  },
+                  "Property": "Margem"
+                }
+              },
+              "queryRef": "Movimentações.Margem",
+              "nativeQueryRef": "Margem"
+            }
+          ]
+        },
+        "Measure Deviation": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Movimentações"
+                    }
+                  },
+                  "Property": "Desvio Meta"
+                }
+              },
+              "queryRef": "Movimentações.Desvio Meta",
+              "nativeQueryRef": "Desvio Meta"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Movimentações"
+                  }
+                },
+                "Property": "Margem"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "scroller": [
+        {
+          "properties": {
+            "pBgColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 2,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "pShouldUsePosNegColoring": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c3e81540287a9187ae8c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Movimentações"
+              }
+            },
+            "Property": "Município"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3d37658f2c0676d9d096",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Movimentações"
+              }
+            },
+            "Property": "Margem"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

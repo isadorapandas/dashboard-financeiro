@@ -1,0 +1,73 @@
+{
+  "name": "Custom",
+  "textClasses": {
+    "label": {
+      "color": "#FFFFFF"
+    },
+    "callout": {
+      "color": "#FFFFFF"
+    },
+    "title": {
+      "color": "#FFFFFF"
+    },
+    "header": {
+      "color": "#FFFFFF"
+    }
+  },
+  "foreground": "#FFFFFF",
+  "foregroundNeutralSecondary": "#FFFFFF",
+  "backgroundLight": "#FFFFFF",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "transparency": 100
+          }
+        ],
+        "visualTooltip": [
+          {
+            "themedTitleFontColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            }
+          }
+        ],
+        "visualHeaderTooltip": [
+          {
+            "themedTitleFontColor": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 100
+          }
+        ]
+      }
+    }
+  },
+  "dataColors": [
+    "#4E626E",
+    "#83C1FF",
+    "#E66C37",
+    "#6B007B",
+    "#E044A7",
+    "#744EC2",
+    "#D9B300",
+    "#D64550"
+  ]
+}

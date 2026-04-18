@@ -1,0 +1,179 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "367500fc2378a653de8d",
+  "position": {
+    "x": 841.82918116910093,
+    "y": 171.82710158958153,
+    "z": 8000,
+    "height": 80.350802901602876,
+    "width": 401.75401450801439,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "enlightenDataStoryDDFB78A6143E42CFAFBC50CCF18D978D",
+    "query": {
+      "queryState": {
+        "measure": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Movimentações"
+                    }
+                  },
+                  "Property": "Qtd Movimentações"
+                }
+              },
+              "queryRef": "Movimentações.Qtd Movimentações",
+              "nativeQueryRef": "Qtd Movimentações"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Movimentações"
+                    }
+                  },
+                  "Property": "Movimentações PIX"
+                }
+              },
+              "queryRef": "Movimentações.Movimentações PIX",
+              "nativeQueryRef": "Movimentações PIX"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Movimentações"
+                    }
+                  },
+                  "Property": "% PIX"
+                }
+              },
+              "queryRef": "Movimentações.% PIX",
+              "nativeQueryRef": "% PIX"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Movimentações"
+                  }
+                },
+                "Property": "Qtd Movimentações"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "story": [
+        {
+          "properties": {
+            "fontcolour": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'O número de movimentações foi de #, das quais # foram feitas via Pix, o que, por sua vez, representa # das movimentações.'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "align": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "data": [
+        {
+          "properties": {
+            "fontcolour": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

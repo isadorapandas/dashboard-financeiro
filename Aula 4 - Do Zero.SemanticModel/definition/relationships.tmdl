@@ -1,0 +1,5 @@
+relationship 170990c2-2db5-4e44-91f5-f369332c2abb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Movimentações.'Data da Movimentacao'
+	toColumn: LocalDateTable_0f0039e2-fd3f-47b7-9ef1-abb4f02da366.Date
+

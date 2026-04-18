@@ -1,0 +1,160 @@
+table Movimentações
+	lineageTag: 88a341c6-a6c1-4ce5-9bee-25714bbdb786
+
+	measure Recebimentos =
+			CALCULATE(
+			    SUM('Movimentações'[Valor da Movimentação]),
+			    'Movimentações'[Tipo]="Recebimento"
+			)
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 707f8812-847e-4343-ac20-83f4c827805b
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure Pagamentos =
+			-CALCULATE(
+			    SUM('Movimentações'[Valor da Movimentação]),
+			    'Movimentações'[Tipo]="Pagamento"
+			)
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 5a02d05b-ea4c-4859-bb47-fc8eea377a74
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure Impostos = [Recebimentos]*0.15
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: f041a464-3dbf-44e0-81d2-ec77c83cf901
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure Lucro = [Recebimentos]-[Pagamentos]-[Impostos]
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: e9c00420-6711-4b4f-ac13-a8a1627fcd08
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	measure Margem = [Lucro]/[Recebimentos]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 2d4adb4d-a9e6-42d4-a54c-e72f533785a9
+
+	measure Complemento = 1-[Margem]
+		formatString: 0
+		lineageTag: 12304900-6550-4010-9934-0deb026578a2
+
+	measure 'Qtd Movimentações' = COUNTROWS('Movimentações')
+		formatString: 0
+		lineageTag: a0827be7-b5dd-4cd9-966e-959de952f4c1
+
+	measure 'Movimentações PIX' =
+			CALCULATE(
+			    COUNTROWS('Movimentações'),
+			    'Movimentações'[Forma Pagamento]="Pix"
+			)
+		formatString: 0
+		lineageTag: d40426e6-a237-4199-82cf-92c4a16cbb60
+
+	measure '% PIX' = 'Movimentações'[Movimentações PIX]/[Qtd Movimentações]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e6e74009-becc-4822-baf6-5f4c7f65938d
+
+	measure 'Desvio Meta' = [Margem]-0.3
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 5aa534cb-3a16-41f4-9d51-0d7f099aa05f
+
+	column 'Numero Movimentacao'
+		dataType: int64
+		formatString: 0
+		lineageTag: d758c2bb-04af-4eb6-9e72-d1563b65f57c
+		summarizeBy: sum
+		sourceColumn: Numero Movimentacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nome
+		dataType: string
+		lineageTag: 247388d3-853b-4b28-a875-9adea669d1d5
+		summarizeBy: none
+		sourceColumn: Nome
+
+		annotation SummarizationSetBy = Automatic
+
+	column Município
+		dataType: string
+		lineageTag: fa51763f-648d-4209-ac73-0c0515d9d36b
+		summarizeBy: none
+		sourceColumn: Município
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data da Movimentacao'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3fc53f66-f3b5-409c-baa1-b205e4ff72f2
+		summarizeBy: none
+		sourceColumn: Data da Movimentacao
+
+		variation Variation
+			isDefault
+			relationship: 170990c2-2db5-4e44-91f5-f369332c2abb
+			defaultHierarchy: LocalDateTable_0f0039e2-fd3f-47b7-9ef1-abb4f02da366.'Hierarquia de datas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Valor da Movimentação'
+		dataType: double
+		lineageTag: 54341a53-b2ef-4705-899d-8921701e2345
+		summarizeBy: sum
+		sourceColumn: Valor da Movimentação
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Tipo
+		dataType: string
+		lineageTag: b71fd42d-3aa8-427e-875d-5a1b90d4979e
+		summarizeBy: none
+		sourceColumn: Tipo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Banco
+		dataType: string
+		lineageTag: d9d390f4-7b5f-4cc2-97db-88a869e3a9a5
+		summarizeBy: none
+		sourceColumn: Banco
+
+		annotation SummarizationSetBy = Automatic
+
+	column Imagem
+		dataType: string
+		lineageTag: 4615e1ac-d2c2-41bf-b15f-b81a418a01af
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: Imagem
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forma Pagamento'
+		dataType: string
+		lineageTag: af439cbc-31c5-4d01-ba45-03038b50c36b
+		summarizeBy: none
+		sourceColumn: Forma Pagamento
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Movimentações-fc17f6e7-6358-4ccf-a189-29770f849493 = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\alonp\hashtagtreinamentos.com\Diego Amorim - Hashtag\Online\Arquivos das Aulas\Intensivão Power BI\LPBI9\4º Dia\Base Financeiro.xlsx"), null, true),
+				    Planilha1_Sheet = Fonte{[Item="Planilha1",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Planilha1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"Numero Movimentacao", Int64.Type}, {"Nome", type text}, {"Município", type text}, {"Data da Movimentacao", type date}, {"Valor da Movimentação", type number}, {"Tipo", type text}, {"Banco", type text}, {"Imagem", type text}, {"Forma Pagamento", type text}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_ResultType = Table
+

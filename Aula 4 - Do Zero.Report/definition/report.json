@@ -1,0 +1,133 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.2.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY21SU11",
+      "reportVersionAtImport": {
+        "visual": "1.8.64",
+        "report": "2.0.64",
+        "page": "1.3.64"
+      },
+      "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Custom9297808660937696.json",
+      "reportVersionAtImport": {
+        "visual": "2.7.0",
+        "report": "3.2.0",
+        "page": "2.3.1"
+      },
+      "type": "RegisteredResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "ImageGrid_FC5183B9_926C_45E0_B5F7_0CE9EAF1DA9B",
+    "ScrollingTextVisual1448795304508",
+    "enlightenDataStoryDDFB78A6143E42CFAFBC50CCF18D978D"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY21SU11",
+          "path": "BaseThemes/CY21SU11.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "ImageGrid_FC5183B9_926C_45E0_B5F7_0CE9EAF1DA9B",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "ImageGrid_FC5183B9_926C_45E0_B5F7_0CE9EAF1DA9B.pbiviz.json",
+          "path": "ImageGrid_FC5183B9_926C_45E0_B5F7_0CE9EAF1DA9B.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "ScrollingTextVisual1448795304508",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "ScrollingTextVisual1448795304508.pbiviz.json",
+          "path": "ScrollingTextVisual1448795304508.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "enlightenDataStoryDDFB78A6143E42CFAFBC50CCF18D978D",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "enlightenDataStoryDDFB78A6143E42CFAFBC50CCF18D978D.pbiviz.json",
+          "path": "enlightenDataStoryDDFB78A6143E42CFAFBC50CCF18D978D.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Custom9297808660937696.json",
+          "path": "Custom9297808660937696.json",
+          "type": "CustomTheme"
+        },
+        {
+          "name": "Plano_de_Fundo9083051787599408.png",
+          "path": "Plano_de_Fundo9083051787599408.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultFilterActionIsDataFilter": true,
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": false
+  },
+  "slowDataSourceSettings": {
+    "isCrossHighlightingDisabled": false,
+    "isSlicerSelectionsButtonEnabled": false,
+    "isFilterSelectionsButtonEnabled": false,
+    "isFieldWellButtonEnabled": false,
+    "isApplyAllButtonEnabled": false
+  }
+}
