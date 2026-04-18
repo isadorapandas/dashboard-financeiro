@@ -1,2 +1,2 @@
 # dashboard-financeiro
-Dashboard financeito fictício em Power BI.
+Dashboard financeito fictício realizado durante o Intensivão de Power BI da Hashtag Treinamentos em abril de 2026.
